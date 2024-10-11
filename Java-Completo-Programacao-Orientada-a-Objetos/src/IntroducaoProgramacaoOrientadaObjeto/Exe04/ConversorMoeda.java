@@ -7,6 +7,4 @@ public class ConversorMoeda {
         qtdDolarComprado += (qtdDolarComprado * IOF);
         return precoDolar * qtdDolarComprado;
     }
-
-
 }
