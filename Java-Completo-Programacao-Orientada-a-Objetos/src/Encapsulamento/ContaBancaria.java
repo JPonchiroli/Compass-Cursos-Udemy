@@ -9,7 +9,7 @@ public class ContaBancaria {
     public ContaBancaria(int numeroConta, String nomeTitular, double depositoInicial) {
         this.numeroConta = numeroConta;
         this.nomeTitular = nomeTitular;
-        this.saldo = depositoInicial;
+        depositar(depositoInicial);
     }
 
     public ContaBancaria(int numeroConta, String nomeTitular){
