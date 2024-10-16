@@ -33,7 +33,7 @@ public class Main {
             double preco = s.nextDouble();
             if (tipoProduto == 'u'){
                 System.out.print("Data de Fabricação (DD/MM/YYYY): ");
-                LocalDate dataFabricacao = LocalDate.parse(s.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                LocalDate  dataFabricacao = LocalDate.parse(s.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                 produtos.add(new ProdutoUsado(nome, preco, dataFabricacao));
             } else if (tipoProduto == 'i'){
                 System.out.println("Taxa alfândega: ");
