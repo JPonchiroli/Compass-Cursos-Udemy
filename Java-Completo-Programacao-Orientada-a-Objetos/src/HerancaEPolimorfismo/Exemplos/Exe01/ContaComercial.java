@@ -18,6 +18,12 @@ public class ContaComercial extends Conta{
         }
     }
 
+    @Override
+    public void sacar(double valor){
+        super.sacar(valor);
+        saldo -= 2;
+    }
+
     public double getLimiteEmprestimo() {
         return limiteEmprestimo;
     }

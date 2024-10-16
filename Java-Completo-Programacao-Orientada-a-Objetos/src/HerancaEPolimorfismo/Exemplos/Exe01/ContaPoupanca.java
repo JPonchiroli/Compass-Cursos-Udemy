@@ -1,6 +1,6 @@
 package HerancaEPolimorfismo.Exemplos.Exe01;
 
-public class ContaPoupanca extends Conta{
+public final class ContaPoupanca extends Conta{
     private double taxaJuros;
 
     public ContaPoupanca(){}
@@ -12,6 +12,11 @@ public class ContaPoupanca extends Conta{
 
     public void atualizarSaldo(){
         saldo += saldo * taxaJuros;
+    }
+
+    @Override
+    public void sacar(double valor){
+        saldo -= valor;
     }
 
 
