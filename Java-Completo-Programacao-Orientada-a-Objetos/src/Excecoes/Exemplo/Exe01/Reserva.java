@@ -13,7 +13,11 @@ public class Reserva {
 
     public Reserva(){}
 
-    public Reserva(int numeroQuarto, Date checkIn, Date checkOut) {
+    public Reserva(int numeroQuarto, Date checkIn, Date checkOut) throws DomainException {
+        if (!checkOut.after(checkIn)){
+            throw new DomainException("Data de check-out deve ser depois da data de check-in");
+        }
+
         this.numeroQuarto = numeroQuarto;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -24,7 +28,15 @@ public class Reserva {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void atualizarDatas(Date checkIn, Date checkOut){
+    public void atualizarDatas(Date checkIn, Date checkOut) throws DomainException{
+        Date agora = new Date();
+        if (checkIn.before(agora) || checkOut.before(agora)){
+            throw new DomainException("As datas de atualização devem ser após a data atual");
+        }
+        if (!checkOut.after(checkIn)){
+            throw new DomainException("Data de check-out deve ser depois da data de check-in");
+        }
+
         this.checkIn = checkIn;
         this.checkOut = checkOut;
     }
