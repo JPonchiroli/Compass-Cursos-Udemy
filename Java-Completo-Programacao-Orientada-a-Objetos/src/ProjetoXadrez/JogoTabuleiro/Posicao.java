@@ -1,4 +1,4 @@
-package ProjetoXadrez.Tabuleiro;
+package ProjetoXadrez.JogoTabuleiro;
 
 public class Posicao {
     private int linha;

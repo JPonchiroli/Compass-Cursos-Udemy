@@ -1,11 +1,10 @@
 package ProjetoXadrez.Aplicacao;
 
-import ProjetoXadrez.Tabuleiro.Posicao;
+import ProjetoXadrez.JogoTabuleiro.Posicao;
+import ProjetoXadrez.JogoTabuleiro.Tabuleiro;
 
 public class Main {
     public static void main(String[] args) {
-        Posicao posicao = new Posicao(5, 6);
-
-        System.out.println(posicao);
+        Tabuleiro tab = new Tabuleiro(8, 8);
     }
 }
