@@ -1,4 +1,4 @@
-package ProjetoXadrez.xadrez;
+package ProjetoXadrez.Xadrez;
 
 import ProjetoXadrez.JogoTabuleiro.Peca;
 import ProjetoXadrez.JogoTabuleiro.Tabuleiro;

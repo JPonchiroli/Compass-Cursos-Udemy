@@ -1,12 +1,16 @@
-package ProjetoXadrez.xadrez;
+package ProjetoXadrez.Xadrez;
 
+import ProjetoXadrez.JogoTabuleiro.Posicao;
 import ProjetoXadrez.JogoTabuleiro.Tabuleiro;
+import ProjetoXadrez.Xadrez.Pecas.Rei;
+import ProjetoXadrez.Xadrez.Pecas.Torre;
 
 public class PartidaXadrez {
     private Tabuleiro tabuleiro;
 
     public PartidaXadrez() {
         tabuleiro = new Tabuleiro(8,8);
+        setupInicial();
     }
 
     public PecaXadrez[][] getPecas(){
@@ -19,5 +23,15 @@ public class PartidaXadrez {
         }
 
         return mat;
+    }
+
+    private void setupInicial(){
+        tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(0,0));
+        tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(0,7));
+        tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(7,0));
+        tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(7,7));
+        tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0,4));
+        tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(7,4));
+
     }
 }

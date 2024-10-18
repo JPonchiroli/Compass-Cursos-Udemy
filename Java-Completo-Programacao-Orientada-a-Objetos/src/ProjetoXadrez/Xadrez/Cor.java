@@ -1,4 +1,4 @@
-package ProjetoXadrez.xadrez;
+package ProjetoXadrez.Xadrez;
 
 public enum Cor {
     PRETO,

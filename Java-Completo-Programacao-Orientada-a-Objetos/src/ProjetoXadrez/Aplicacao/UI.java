@@ -1,6 +1,6 @@
 package ProjetoXadrez.Aplicacao;
 
-import ProjetoXadrez.xadrez.PecaXadrez;
+import ProjetoXadrez.Xadrez.PecaXadrez;
 
 public class UI {
     public static void mostrarTabuleiro(PecaXadrez[][] pecas){
