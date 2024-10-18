@@ -1,7 +1,9 @@
 package ProjetoXadrez.Xadrez;
 
-public class XadrezException extends RuntimeException{
+import ProjetoXadrez.JogoTabuleiro.TabuleiroException;
+
+public class XadrezException extends TabuleiroException {
     public XadrezException(String msg){
-        super();
+        super(msg);
     }
 }
