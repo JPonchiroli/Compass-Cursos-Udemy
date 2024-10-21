@@ -1,6 +1,7 @@
 package ProjetoXadrez.Aplicacao;
 
 import ProjetoXadrez.Xadrez.Cor;
+import ProjetoXadrez.Xadrez.PartidaXadrez;
 import ProjetoXadrez.Xadrez.PecaXadrez;
 import ProjetoXadrez.Xadrez.PosicaoXadrez;
 
@@ -44,6 +45,14 @@ public class UI {
         } catch (RuntimeException e){
             throw new InputMismatchException("Erro lendo PosicaoXadrez. Posicao validas sao de a1 a h8");
         }
+    }
+
+    public static void mostrarPartida(PartidaXadrez partidaXadrez){
+        mostrarTabuleiro(partidaXadrez.getPecas());
+        System.out.println();
+
+        System.out.println("Turno: " + partidaXadrez.getTurno());
+        System.out.println("Esperando Jogador: " + partidaXadrez.getJogadorAtual());
     }
 
     public static void mostrarTabuleiro(PecaXadrez[][] pecas){
