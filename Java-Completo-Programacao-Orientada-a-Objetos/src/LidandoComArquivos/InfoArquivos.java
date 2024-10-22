@@ -9,6 +9,6 @@ public class InfoArquivos {
         File path = new File(caminho);
         System.out.println("getPath: " + path.getPath());
         System.out.println("getParent: " + path.getParent());
-        System.out.println("getName: " + path.getName());
+        System.out.println("getNome: " + path.getName());
     }
 }
