@@ -1,7 +1,8 @@
 package ProgramacaoFuncExpressoesLamb.Demo01;
 
+import ProgramacaoFuncExpressoesLamb.Demo01.Produto;
+
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
