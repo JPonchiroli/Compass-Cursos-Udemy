@@ -1,4 +1,4 @@
-package EnumeracoesEComposicoes.Exercicio.Exe01;
+package Semana02.EnumeracoesEComposicoes.Exercicio.Exe01;
 
 public class Departamento {
     private String nome;

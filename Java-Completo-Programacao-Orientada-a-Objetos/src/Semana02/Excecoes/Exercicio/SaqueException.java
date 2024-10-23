@@ -1,4 +1,4 @@
-package Excecoes.Exercicio;
+package Semana02.Excecoes.Exercicio;
 
 public class SaqueException extends Exception{
 

@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe03;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe03;
 
 public class Retangulo extends Forma{
     private double altura;

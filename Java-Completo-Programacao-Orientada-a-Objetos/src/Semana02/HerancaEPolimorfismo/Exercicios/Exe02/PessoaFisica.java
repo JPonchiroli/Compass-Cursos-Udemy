@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exercicios.Exe02;
+package Semana02.HerancaEPolimorfismo.Exercicios.Exe02;
 
 public class PessoaFisica extends Pessoa{
     private double gastosComSaude;

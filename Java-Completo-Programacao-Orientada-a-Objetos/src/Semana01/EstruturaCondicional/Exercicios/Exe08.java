@@ -1,4 +1,4 @@
-package EstruturaCondicional.Exercicios;
+package Semana01.EstruturaCondicional.Exercicios;
 
 import java.util.Locale;
 import java.util.Scanner;

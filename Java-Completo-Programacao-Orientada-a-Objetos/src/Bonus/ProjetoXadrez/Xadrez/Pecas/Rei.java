@@ -1,9 +1,9 @@
-package ProjetoXadrez.Xadrez.Pecas;
+package Bonus.ProjetoXadrez.Xadrez.Pecas;
 
-import ProjetoXadrez.JogoTabuleiro.Posicao;
-import ProjetoXadrez.JogoTabuleiro.Tabuleiro;
-import ProjetoXadrez.Xadrez.Cor;
-import ProjetoXadrez.Xadrez.PecaXadrez;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Posicao;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Tabuleiro;
+import Bonus.ProjetoXadrez.Xadrez.Cor;
+import Bonus.ProjetoXadrez.Xadrez.PecaXadrez;
 
 public class Rei extends PecaXadrez {
 

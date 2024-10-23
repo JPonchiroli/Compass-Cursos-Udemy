@@ -1,6 +1,6 @@
-package HerancaEPolimorfismo.Exercicios.Exe01;
+package Semana02.HerancaEPolimorfismo.Exercicios.Exe01;
 
-import HerancaEPolimorfismo.Exemplos.Exe02.Funcionario;
+import Semana02.HerancaEPolimorfismo.Exemplos.Exe02.Funcionario;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

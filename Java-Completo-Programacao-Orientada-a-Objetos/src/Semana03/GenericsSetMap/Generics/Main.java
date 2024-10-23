@@ -1,4 +1,4 @@
-package GenericsSetMap.Generics;
+package Semana03.GenericsSetMap.Generics;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package IntroducaoProgramacaoOrientadaObjeto.Exe04;
+package Semana01.IntroducaoProgramacaoOrientadaObjeto.Exe04;
 
 import java.util.Scanner;
 

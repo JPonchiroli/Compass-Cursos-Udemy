@@ -1,4 +1,4 @@
-package Interfaces.Exemplos.Exe03;
+package Semana03.Interfaces.Exemplos.Exe03;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

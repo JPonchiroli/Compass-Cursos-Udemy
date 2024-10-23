@@ -1,4 +1,4 @@
-package GenericsSetMap.Exercicios.Exe02;
+package Semana03.GenericsSetMap.Exercicios.Exe02;
 
 import java.util.HashSet;
 import java.util.Scanner;

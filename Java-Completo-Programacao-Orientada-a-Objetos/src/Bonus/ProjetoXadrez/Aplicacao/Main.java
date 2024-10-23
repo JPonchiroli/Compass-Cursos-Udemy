@@ -1,9 +1,9 @@
-package ProjetoXadrez.Aplicacao;
+package Bonus.ProjetoXadrez.Aplicacao;
 
-import ProjetoXadrez.Xadrez.PartidaXadrez;
-import ProjetoXadrez.Xadrez.PecaXadrez;
-import ProjetoXadrez.Xadrez.PosicaoXadrez;
-import ProjetoXadrez.Xadrez.XadrezException;
+import Bonus.ProjetoXadrez.Xadrez.PartidaXadrez;
+import Bonus.ProjetoXadrez.Xadrez.PecaXadrez;
+import Bonus.ProjetoXadrez.Xadrez.PosicaoXadrez;
+import Bonus.ProjetoXadrez.Xadrez.XadrezException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

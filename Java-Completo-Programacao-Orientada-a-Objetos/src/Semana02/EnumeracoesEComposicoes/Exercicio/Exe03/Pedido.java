@@ -1,4 +1,4 @@
-package EnumeracoesEComposicoes.Exercicio.Exe03;
+package Semana02.EnumeracoesEComposicoes.Exercicio.Exe03;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

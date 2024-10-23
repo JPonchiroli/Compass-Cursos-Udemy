@@ -1,4 +1,4 @@
-package ArraysEListas.Array.TipoReferencia;
+package Semana01.ArraysEListas.Array.TipoReferencia;
 
 public class Produtos {
     private String nome;

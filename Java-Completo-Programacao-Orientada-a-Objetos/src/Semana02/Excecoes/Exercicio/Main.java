@@ -1,4 +1,4 @@
-package Excecoes.Exercicio;
+package Semana02.Excecoes.Exercicio;
 
 import java.util.Scanner;
 

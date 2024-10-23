@@ -1,4 +1,4 @@
-package IntroducaoProgramacaoOrientadaObjeto.Exe01;
+package Semana01.IntroducaoProgramacaoOrientadaObjeto.Exe01;
 
 public class Retangulo {
     public double altura;

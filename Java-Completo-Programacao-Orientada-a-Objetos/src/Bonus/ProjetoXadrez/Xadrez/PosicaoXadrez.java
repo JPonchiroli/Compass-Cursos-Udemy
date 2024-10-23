@@ -1,6 +1,6 @@
-package ProjetoXadrez.Xadrez;
+package Bonus.ProjetoXadrez.Xadrez;
 
-import ProjetoXadrez.JogoTabuleiro.Posicao;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Posicao;
 
 public class PosicaoXadrez {
     private char coluna;

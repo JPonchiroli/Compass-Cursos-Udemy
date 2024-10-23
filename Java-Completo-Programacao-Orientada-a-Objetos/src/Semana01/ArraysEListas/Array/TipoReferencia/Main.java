@@ -1,4 +1,4 @@
-package ArraysEListas.Array.TipoReferencia;
+package Semana01.ArraysEListas.Array.TipoReferencia;
 
 import java.util.Scanner;
 

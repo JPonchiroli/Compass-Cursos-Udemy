@@ -1,4 +1,4 @@
-package Interfaces.Exemplos.Exe02;
+package Semana03.Interfaces.Exemplos.Exe02;
 
 public class Retangulo extends FormaAbstrata {
     private double altura;

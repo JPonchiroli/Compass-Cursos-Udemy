@@ -1,4 +1,4 @@
-package Interfaces.Exemplos.Exe01;
+package Semana03.Interfaces.Exemplos.Exe01;
 
 public class Veiculo {
     private String modelo;

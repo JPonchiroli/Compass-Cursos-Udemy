@@ -1,8 +1,8 @@
-package EstruturaSequencial;
+package Semana01.EstruturaSequencial;
 
 public class Casting {
   public static void main(String[] args) {
-    //EstruturaSequencial Casting
+    //Semana01.EstruturaSequencial Casting
     int a, b;
     double resultado;
 

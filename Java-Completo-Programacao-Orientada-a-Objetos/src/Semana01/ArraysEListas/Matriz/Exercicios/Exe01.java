@@ -1,4 +1,4 @@
-package ArraysEListas.Matriz.Exercicios;
+package Semana01.ArraysEListas.Matriz.Exercicios;
 
 import java.util.Scanner;
 

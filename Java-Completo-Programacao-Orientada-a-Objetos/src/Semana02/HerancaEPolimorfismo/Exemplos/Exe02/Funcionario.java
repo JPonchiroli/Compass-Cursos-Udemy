@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe02;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe02;
 
 public class Funcionario {
     private String nome;

@@ -1,4 +1,4 @@
-package EstruturaCondicional;
+package Semana01.EstruturaCondicional;
 
 public class IfElse {
     public static void main(String[] args) {

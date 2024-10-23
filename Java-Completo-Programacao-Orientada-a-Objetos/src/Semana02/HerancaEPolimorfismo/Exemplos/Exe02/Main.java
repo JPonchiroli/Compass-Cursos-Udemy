@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe02;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe02;
 
 import java.util.ArrayList;
 import java.util.List;

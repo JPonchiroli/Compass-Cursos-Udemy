@@ -1,4 +1,4 @@
-package Interfaces.Exemplos.Exe03;
+package Semana03.Interfaces.Exemplos.Exe03;
 
 public class Funcionario implements Comparable<Funcionario>{
     private String nome;

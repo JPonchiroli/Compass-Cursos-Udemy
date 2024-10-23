@@ -1,4 +1,4 @@
-package ArraysEListas.List.Exercicios.Exe01;
+package Semana01.ArraysEListas.List.Exercicios.Exe01;
 
 public class Empregado {
     private int id;

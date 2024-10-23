@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Exercicios.Exe01;
+package Semana03.ProgramacaoFuncExpressoesLamb.Exercicios.Exe01;
 
 import java.util.Objects;
 

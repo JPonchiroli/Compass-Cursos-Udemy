@@ -1,4 +1,4 @@
-package ProjetoXadrez.JogoTabuleiro;
+package Bonus.ProjetoXadrez.JogoTabuleiro;
 
 public class TabuleiroException extends RuntimeException {
 

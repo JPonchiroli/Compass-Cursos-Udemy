@@ -1,4 +1,4 @@
-package EnumeracoesEComposicoes.Exercicio.Exe03;
+package Semana02.EnumeracoesEComposicoes.Exercicio.Exe03;
 
 public class ItemPedido {
     private Integer quantidade;

@@ -1,6 +1,6 @@
-package ProjetoXadrez.Xadrez;
+package Bonus.ProjetoXadrez.Xadrez;
 
-import ProjetoXadrez.JogoTabuleiro.TabuleiroException;
+import Bonus.ProjetoXadrez.JogoTabuleiro.TabuleiroException;
 
 public class XadrezException extends TabuleiroException {
     public XadrezException(String msg){

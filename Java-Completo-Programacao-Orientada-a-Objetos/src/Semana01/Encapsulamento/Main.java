@@ -1,4 +1,4 @@
-package Encapsulamento;
+package Semana01.Encapsulamento;
 
 import java.util.Scanner;
 

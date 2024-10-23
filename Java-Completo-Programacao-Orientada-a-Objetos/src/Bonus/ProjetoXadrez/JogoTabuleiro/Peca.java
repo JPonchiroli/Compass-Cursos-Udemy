@@ -1,4 +1,4 @@
-package ProjetoXadrez.JogoTabuleiro;
+package Bonus.ProjetoXadrez.JogoTabuleiro;
 
 public abstract class Peca {
     protected Posicao posicao;

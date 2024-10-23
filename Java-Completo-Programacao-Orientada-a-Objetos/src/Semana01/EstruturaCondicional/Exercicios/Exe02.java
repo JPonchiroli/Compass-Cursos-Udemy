@@ -1,4 +1,4 @@
-package EstruturaCondicional.Exercicios;
+package Semana01.EstruturaCondicional.Exercicios;
 
 public class Exe02 {
     public static void main(String[] args) {

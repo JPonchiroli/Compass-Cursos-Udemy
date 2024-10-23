@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Function;
+package Semana03.ProgramacaoFuncExpressoesLamb.Function;
 
 import java.util.ArrayList;
 import java.util.List;

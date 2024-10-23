@@ -1,4 +1,4 @@
-package EstruturaCondicional;
+package Semana01.EstruturaCondicional;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package EnumeracoesEComposicoes.Exercicio.Exe01;
+package Semana02.EnumeracoesEComposicoes.Exercicio.Exe01;
 
 import java.util.Date;
 

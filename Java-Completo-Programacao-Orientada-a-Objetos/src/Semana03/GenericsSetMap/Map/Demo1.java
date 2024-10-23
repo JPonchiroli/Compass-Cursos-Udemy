@@ -1,4 +1,4 @@
-package GenericsSetMap.Map;
+package Semana03.GenericsSetMap.Map;
 
 import java.util.Map;
 import java.util.TreeMap;

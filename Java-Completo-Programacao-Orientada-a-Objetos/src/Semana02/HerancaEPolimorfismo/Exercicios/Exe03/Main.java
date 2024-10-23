@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exercicios.Exe03;
+package Semana02.HerancaEPolimorfismo.Exercicios.Exe03;
 
 import java.util.ArrayList;
 import java.util.List;

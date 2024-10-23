@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe01;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe01;
 
 public class Main {
     public static void main(String[] args) {

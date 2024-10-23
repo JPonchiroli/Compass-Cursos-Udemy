@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exercicios.Exe01;
+package Semana02.HerancaEPolimorfismo.Exercicios.Exe01;
 
 public class ProdutoImportado extends Produto{
     private double taxaAlfandega;

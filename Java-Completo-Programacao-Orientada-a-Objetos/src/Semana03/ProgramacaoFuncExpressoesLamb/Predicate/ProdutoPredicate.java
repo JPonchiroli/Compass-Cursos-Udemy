@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Predicate;
+package Semana03.ProgramacaoFuncExpressoesLamb.Predicate;
 
 import java.util.function.Predicate;
 

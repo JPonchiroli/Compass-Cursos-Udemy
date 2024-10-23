@@ -1,4 +1,4 @@
-package Interfaces.Exercicios.Exe01;
+package Semana03.Interfaces.Exercicios.Exe01;
 
 
 import java.time.LocalDate;

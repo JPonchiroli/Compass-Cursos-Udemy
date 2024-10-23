@@ -1,8 +1,8 @@
-package ProjetoXadrez.Xadrez;
+package Bonus.ProjetoXadrez.Xadrez;
 
-import ProjetoXadrez.JogoTabuleiro.Peca;
-import ProjetoXadrez.JogoTabuleiro.Posicao;
-import ProjetoXadrez.JogoTabuleiro.Tabuleiro;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Peca;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Posicao;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Tabuleiro;
 
 public abstract class PecaXadrez extends Peca {
     private Cor cor;

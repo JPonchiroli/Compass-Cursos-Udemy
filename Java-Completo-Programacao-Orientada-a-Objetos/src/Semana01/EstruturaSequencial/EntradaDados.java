@@ -1,4 +1,4 @@
-package EstruturaSequencial;
+package Semana01.EstruturaSequencial;
 
 import java.util.Scanner;
 

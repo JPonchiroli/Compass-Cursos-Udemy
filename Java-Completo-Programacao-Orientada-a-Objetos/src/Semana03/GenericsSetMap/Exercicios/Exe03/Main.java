@@ -1,4 +1,4 @@
-package GenericsSetMap.Exercicios.Exe03;
+package Semana03.GenericsSetMap.Exercicios.Exe03;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

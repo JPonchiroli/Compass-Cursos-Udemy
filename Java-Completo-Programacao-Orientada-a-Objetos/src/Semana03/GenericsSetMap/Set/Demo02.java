@@ -1,4 +1,4 @@
-package GenericsSetMap.Set;
+package Semana03.GenericsSetMap.Set;
 
 import java.util.Arrays;
 import java.util.Set;

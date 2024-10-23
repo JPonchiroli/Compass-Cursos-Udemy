@@ -1,4 +1,4 @@
-package Excecoes.Exemplo.Exe01;
+package Semana02.Excecoes.Exemplo.Exe01;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

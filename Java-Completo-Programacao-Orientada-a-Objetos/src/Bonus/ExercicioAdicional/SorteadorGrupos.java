@@ -1,4 +1,4 @@
-package ExercicioAdicional;
+package Bonus.ExercicioAdicional;
 
 import java.util.*;
 import java.util.stream.Collectors;

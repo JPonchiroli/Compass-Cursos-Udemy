@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Exercicios.Exe02;
+package Semana03.ProgramacaoFuncExpressoesLamb.Exercicios.Exe02;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

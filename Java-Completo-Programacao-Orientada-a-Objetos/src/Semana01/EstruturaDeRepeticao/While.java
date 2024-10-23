@@ -1,4 +1,4 @@
-package EstruturaDeRepeticao;
+package Semana01.EstruturaDeRepeticao;
 
 import java.util.Scanner;
 

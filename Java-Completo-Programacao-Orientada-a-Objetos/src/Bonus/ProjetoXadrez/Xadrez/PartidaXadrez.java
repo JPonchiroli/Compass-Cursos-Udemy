@@ -1,10 +1,10 @@
-package ProjetoXadrez.Xadrez;
+package Bonus.ProjetoXadrez.Xadrez;
 
-import ProjetoXadrez.JogoTabuleiro.Peca;
-import ProjetoXadrez.JogoTabuleiro.Posicao;
-import ProjetoXadrez.JogoTabuleiro.Tabuleiro;
-import ProjetoXadrez.Xadrez.Pecas.Rei;
-import ProjetoXadrez.Xadrez.Pecas.Torre;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Peca;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Posicao;
+import Bonus.ProjetoXadrez.JogoTabuleiro.Tabuleiro;
+import Bonus.ProjetoXadrez.Xadrez.Pecas.Rei;
+import Bonus.ProjetoXadrez.Xadrez.Pecas.Torre;
 
 public class PartidaXadrez {
     private Tabuleiro tabuleiro;

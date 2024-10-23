@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exercicios.Exe01;
+package Semana02.HerancaEPolimorfismo.Exercicios.Exe01;
 
 import java.time.LocalDate;
 

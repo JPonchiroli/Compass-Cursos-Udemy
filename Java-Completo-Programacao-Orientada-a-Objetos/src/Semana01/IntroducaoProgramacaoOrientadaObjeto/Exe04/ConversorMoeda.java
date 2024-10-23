@@ -1,4 +1,4 @@
-package IntroducaoProgramacaoOrientadaObjeto.Exe04;
+package Semana01.IntroducaoProgramacaoOrientadaObjeto.Exe04;
 
 public class ConversorMoeda {
     public static final double IOF = 0.06;

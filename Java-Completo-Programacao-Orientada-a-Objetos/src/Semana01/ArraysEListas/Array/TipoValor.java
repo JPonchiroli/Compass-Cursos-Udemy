@@ -1,4 +1,4 @@
-package ArraysEListas.Array;
+package Semana01.ArraysEListas.Array;
 
 import java.util.Scanner;
 

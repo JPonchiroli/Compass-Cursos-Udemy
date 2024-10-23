@@ -1,4 +1,4 @@
-package Encapsulamento;
+package Semana01.Encapsulamento;
 
 public class ContaBancaria {
     private int numeroConta;

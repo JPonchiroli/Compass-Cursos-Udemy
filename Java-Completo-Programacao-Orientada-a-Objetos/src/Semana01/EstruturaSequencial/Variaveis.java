@@ -1,9 +1,9 @@
-package EstruturaSequencial;
+package Semana01.EstruturaSequencial;
 
 public class Variaveis {
   public static void main(String[] args) {
 
-    // EstruturaSequencial.Variaveis e tipos basicos
+    // Semana01.EstruturaSequencial.Variaveis e tipos basicos
     int idade = 20;
     double salario = 1200.50;
     String nome = "João";

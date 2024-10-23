@@ -1,4 +1,4 @@
-package EstruturaSequencial;
+package Semana01.EstruturaSequencial;
 
 public class ExercicioFixacaoSaidaDados {
   public static void main(String[] args) {

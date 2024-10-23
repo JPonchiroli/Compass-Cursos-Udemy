@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe01;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe01;
 
 public final class ContaPoupanca extends Conta{
     private double taxaJuros;

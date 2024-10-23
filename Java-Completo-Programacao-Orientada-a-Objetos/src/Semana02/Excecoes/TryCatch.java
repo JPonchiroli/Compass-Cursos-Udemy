@@ -1,4 +1,4 @@
-package Excecoes;
+package Semana02.Excecoes;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package Interfaces.Exemplos.Exe02;
+package Semana03.Interfaces.Exemplos.Exe02;
 
 import java.util.ArrayList;
 import java.util.List;

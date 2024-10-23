@@ -1,4 +1,4 @@
-package EstruturaDeRepeticao.ExerciciosWhile;
+package Semana01.EstruturaDeRepeticao.ExerciciosWhile;
 
 import java.util.Scanner;
 

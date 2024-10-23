@@ -1,4 +1,4 @@
-package ArraysEListas.List;
+package Semana01.ArraysEListas.List;
 
 import java.util.ArrayList;
 import java.util.List;

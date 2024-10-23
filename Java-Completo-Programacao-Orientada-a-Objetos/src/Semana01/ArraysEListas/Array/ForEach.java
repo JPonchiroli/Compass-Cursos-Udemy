@@ -1,4 +1,4 @@
-package ArraysEListas.Array;
+package Semana01.ArraysEListas.Array;
 
 public class ForEach {
     public static void main(String[] args) {

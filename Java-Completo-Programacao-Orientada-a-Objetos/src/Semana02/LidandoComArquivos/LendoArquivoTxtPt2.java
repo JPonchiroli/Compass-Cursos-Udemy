@@ -1,4 +1,4 @@
-package LidandoComArquivos;
+package Semana02.LidandoComArquivos;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

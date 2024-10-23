@@ -1,4 +1,4 @@
-package GenericsSetMap.Map.Demo02;
+package Semana03.GenericsSetMap.Map.Demo02;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package HerancaEPolimorfismo.Exemplos.Exe03;
+package Semana02.HerancaEPolimorfismo.Exemplos.Exe03;
 
 public class Circulo extends Forma{
     private double raio;

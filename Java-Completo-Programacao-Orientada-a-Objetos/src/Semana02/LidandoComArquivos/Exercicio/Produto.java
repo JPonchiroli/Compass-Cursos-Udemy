@@ -1,4 +1,4 @@
-package LidandoComArquivos.Exercicio;
+package Semana02.LidandoComArquivos.Exercicio;
 
 public class Produto {
     private String nome;

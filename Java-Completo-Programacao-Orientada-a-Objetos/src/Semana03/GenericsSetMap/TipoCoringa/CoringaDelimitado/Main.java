@@ -1,4 +1,4 @@
-package GenericsSetMap.TipoCoringa.CoringaDelimitado;
+package Semana03.GenericsSetMap.TipoCoringa.CoringaDelimitado;
 
 import java.util.ArrayList;
 import java.util.Arrays;

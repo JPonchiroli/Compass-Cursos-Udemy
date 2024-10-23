@@ -1,4 +1,4 @@
-package LidandoComArquivos.Exercicio;
+package Semana02.LidandoComArquivos.Exercicio;
 
 import java.io.*;
 import java.util.ArrayList;

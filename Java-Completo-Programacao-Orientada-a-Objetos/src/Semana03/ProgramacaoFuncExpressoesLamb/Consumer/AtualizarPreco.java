@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Consumer;
+package Semana03.ProgramacaoFuncExpressoesLamb.Consumer;
 
 import java.util.function.Consumer;
 
