@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo03;
+package ProgramacaoFuncExpressoesLamb.Consumer;
 
 import java.util.Objects;
 

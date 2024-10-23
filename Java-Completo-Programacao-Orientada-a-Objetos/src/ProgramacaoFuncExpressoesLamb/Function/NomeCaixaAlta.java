@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo04;
+package ProgramacaoFuncExpressoesLamb.Function;
 
 import java.util.function.Function;
 

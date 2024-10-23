@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo02;
+package ProgramacaoFuncExpressoesLamb.Function;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,8 @@ public class Main {
         lista.add(new Produto("Notebook", 1200.0));
         lista.add(new Produto("Tablet", 50.0));
 
-        //lista.removeIf(new ProdutoPredicate());
+        List<String> nomes = lista.stream().map(new NomeCaixaAlta()).toList();
 
-        lista.removeIf(p -> p.getPreco() >= 100);
-
-        for (Produto produtos : lista){
-            System.out.println(produtos);
-        }
+        nomes.forEach(System.out::println);
     }
 }

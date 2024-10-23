@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo02;
+package ProgramacaoFuncExpressoesLamb.Predicate;
 
 import java.util.Objects;
 

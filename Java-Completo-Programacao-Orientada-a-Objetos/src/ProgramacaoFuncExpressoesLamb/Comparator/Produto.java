@@ -1,4 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo04;
+package ProgramacaoFuncExpressoesLamb.Comparator;
 
 import java.util.Objects;
 

@@ -1,6 +1,4 @@
-package ProgramacaoFuncExpressoesLamb.Demo01;
-
-import ProgramacaoFuncExpressoesLamb.Demo01.Produto;
+package ProgramacaoFuncExpressoesLamb.Comparator;
 
 import java.util.ArrayList;
 import java.util.List;
