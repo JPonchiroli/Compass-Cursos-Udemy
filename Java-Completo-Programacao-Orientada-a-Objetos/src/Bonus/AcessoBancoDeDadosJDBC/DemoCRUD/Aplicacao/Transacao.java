@@ -1,7 +1,7 @@
-package Bonus.AcessoBancoDeDadosJDBC.Aplicacao;
+package Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.Aplicacao;
 
-import Bonus.AcessoBancoDeDadosJDBC.db.DB;
-import Bonus.AcessoBancoDeDadosJDBC.db.DbException;
+import Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.db.DB;
+import Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.db.DbException;
 
 import java.sql.Connection;
 import java.sql.Statement;

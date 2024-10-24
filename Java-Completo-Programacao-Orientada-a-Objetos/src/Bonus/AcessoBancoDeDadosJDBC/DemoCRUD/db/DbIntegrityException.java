@@ -1,4 +1,4 @@
-package Bonus.AcessoBancoDeDadosJDBC.db;
+package Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.db;
 
 public class DbIntegrityException extends RuntimeException{
     public DbIntegrityException(String msg){

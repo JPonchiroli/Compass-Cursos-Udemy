@@ -1,6 +1,6 @@
-package Bonus.AcessoBancoDeDadosJDBC.Aplicacao;
+package Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.Aplicacao;
 
-import Bonus.AcessoBancoDeDadosJDBC.db.DB;
+import Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.db.DB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

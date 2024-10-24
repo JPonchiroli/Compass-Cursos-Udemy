@@ -1,4 +1,4 @@
-package Bonus.AcessoBancoDeDadosJDBC.db;
+package Bonus.AcessoBancoDeDadosJDBC.DemoDAO.db;
 
 public class DbException extends RuntimeException{
     public DbException(String msg){

@@ -1,11 +1,10 @@
-package Bonus.AcessoBancoDeDadosJDBC.Aplicacao;
+package Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.Aplicacao;
 
-import Bonus.AcessoBancoDeDadosJDBC.db.DB;
-import Bonus.AcessoBancoDeDadosJDBC.db.DbIntegrityException;
+import Bonus.AcessoBancoDeDadosJDBC.DemoCRUD.db.DB;
 
 import java.sql.*;
 
-public class Delete {
+public class Update {
     public static void main(String[] args) {
         Connection conn = null;
         PreparedStatement st = null;
@@ -14,17 +13,19 @@ public class Delete {
             conn = DB.getConnection();
 
             st = conn.prepareStatement(
-                    "DELETE FROM department "
-                            + "WHERE "
-                            + "Id = ? ");
+                    "UPDATE seller "
+                      + "SET BaseSalary = BaseSalary + ? "
+                      + "WHERE "
+                      + "(DepartmentId = ?)");
 
-            st.setInt(1, 6);
+            st.setDouble(1, 200.0);
+            st.setInt(2, 2);
 
             int rowsAffected = st.executeUpdate();
             System.out.println("Done! Rows Affected: " + rowsAffected);
 
         } catch (SQLException e) {
-            throw new DbIntegrityException(e.getMessage());
+            e.printStackTrace();
         } finally {
             DB.fecharStatement(st);
             DB.fecharConexao();

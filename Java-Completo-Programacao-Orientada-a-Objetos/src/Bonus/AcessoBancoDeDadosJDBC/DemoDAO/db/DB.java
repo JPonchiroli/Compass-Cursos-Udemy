@@ -1,4 +1,4 @@
-package Bonus.AcessoBancoDeDadosJDBC.db;
+package Bonus.AcessoBancoDeDadosJDBC.DemoDAO.db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
