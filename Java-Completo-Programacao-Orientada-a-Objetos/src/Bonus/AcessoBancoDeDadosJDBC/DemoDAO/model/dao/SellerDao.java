@@ -6,8 +6,8 @@ import Bonus.AcessoBancoDeDadosJDBC.DemoDAO.model.entities.Seller;
 import java.util.List;
 
 public interface SellerDao {
-    void insert(Seller sl);
-    void update(Seller sl);
+    void insert(Seller sel);
+    void update(Seller sel);
     void deleteById(Integer Id);
     Seller findById(Integer Id);
     List<Seller> findAll();
