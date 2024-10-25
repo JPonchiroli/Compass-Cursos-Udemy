@@ -8,7 +8,7 @@ import Bonus.AcessoBancoDeDadosJDBC.DemoDAO.model.entities.Seller;
 import java.util.Date;
 import java.util.List;
 
-public class Main {
+public class SellerMain {
     public static void main(String[] args) {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
