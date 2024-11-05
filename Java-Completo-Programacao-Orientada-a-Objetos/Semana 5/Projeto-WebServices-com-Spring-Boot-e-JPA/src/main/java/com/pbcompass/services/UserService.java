@@ -1,7 +1,5 @@
 package com.pbcompass.services;
 
-import com.pbcompass.services.exceptions.DatabaseException;
-import com.pbcompass.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -10,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.pbcompass.entities.User;
 import com.pbcompass.repositories.UserRepository;
+import com.pbcompass.services.exceptions.DatabaseException;
+import com.pbcompass.services.exceptions.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
