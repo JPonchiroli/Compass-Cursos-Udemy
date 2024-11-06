@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pbcompass.Projeto_WebServices_com_MongoDB.services.UserService;
 import com.pbcompass.Projeto_WebServices_com_MongoDB.domain.User;
+import com.pbcompass.Projeto_WebServices_com_MongoDB.dto.UserDTO;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -20,8 +22,9 @@ public class UserResource {
     private UserService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<User>> findAll(){
+    public ResponseEntity<List<UserDTO>> findAll(){
         List<User> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+        List<UserDTO> listDTO = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDTO);
     }
 }
