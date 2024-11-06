@@ -1,5 +1,6 @@
 package com.pbcompass.Projeto_WebServices_com_MongoDB.domain;
 
+import com.pbcompass.Projeto_WebServices_com_MongoDB.dto.AuthorDTO;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
@@ -13,16 +14,16 @@ public class Post implements Serializable {
     private String title;
     private String body;
 
-    private User user;
+    private AuthorDTO author;
 
     public Post(){}
 
-    public Post(String id, Date date, String title, String body, User user) {
+    public Post(String id, Date date, String title, String body, AuthorDTO author) {
         this.id = id;
         this.date = date;
         this.title = title;
         this.body = body;
-        this.user = user;
+        this.author = author;
     }
 
     public String getId() {
@@ -57,12 +58,12 @@ public class Post implements Serializable {
         this.body = body;
     }
 
-    public User getUser() {
-        return user;
+    public AuthorDTO getAuthor() {
+        return author;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAuthor(AuthorDTO user) {
+        this.author = user;
     }
 
     @Override
