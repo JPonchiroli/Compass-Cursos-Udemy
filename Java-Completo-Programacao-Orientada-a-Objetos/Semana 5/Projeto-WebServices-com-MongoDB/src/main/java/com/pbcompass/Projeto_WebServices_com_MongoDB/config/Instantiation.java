@@ -1,6 +1,7 @@
 package com.pbcompass.Projeto_WebServices_com_MongoDB.config;
 
 import com.pbcompass.Projeto_WebServices_com_MongoDB.dto.AuthorDTO;
+import com.pbcompass.Projeto_WebServices_com_MongoDB.dto.CommentDTO;
 import com.pbcompass.Projeto_WebServices_com_MongoDB.repositories.PostRepository;
 import com.pbcompass.Projeto_WebServices_com_MongoDB.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,13 @@ public class Instantiation implements CommandLineRunner {
 
         Post post1 = new Post(null, sdf.parse("21/03/2018"), "Let's go trip", "I'm going to travel to Sao Paulo. Hugs!", new AuthorDTO(maria));
         Post post2 = new Post(null, sdf.parse("23/03/2018"), "Good Morning", "I waked up happy today!", new AuthorDTO(maria));
+
+        CommentDTO c1 = new CommentDTO("Good travel bro!", sdf.parse("21/03/2018"), new AuthorDTO(alex));
+        CommentDTO c2 = new CommentDTO("Enjoy!", sdf.parse("22/03/2018"), new AuthorDTO(bob));
+        CommentDTO c3 = new CommentDTO("Have a good day!", sdf.parse("23/03/2018"), new AuthorDTO(alex));
+
+        post1.getComments().addAll(Arrays.asList(c1, c2));
+        post2.getComments().addAll(Arrays.asList(c3));
 
         postRepository.saveAll(Arrays.asList(post1, post2));
 
