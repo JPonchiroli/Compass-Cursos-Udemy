@@ -28,9 +28,8 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-			
 	}
-	
+
 	public static Scene getMainScene() {
 		return mainScene;
 	}
@@ -38,5 +37,4 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 }
