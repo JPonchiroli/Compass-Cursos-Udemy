@@ -28,4 +28,10 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<User> updatePassword(@PathVariable Long id, @RequestBody User user) {
+        User currentUser = userService.updatePassword(id, user.getPassword());
+        return ResponseEntity.status(HttpStatus.OK).body(currentUser);
+    }
+
 }
