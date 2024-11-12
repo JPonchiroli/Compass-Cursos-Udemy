@@ -4,6 +4,7 @@ import com.pbcompass.park_api.web.dto.UserCreateDto;
 import com.pbcompass.park_api.web.dto.UserPasswordDto;
 import com.pbcompass.park_api.web.dto.UserResponseDto;
 import com.pbcompass.park_api.web.dto.mapper.UserMapper;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<UserResponseDto> insert(@RequestBody UserCreateDto createDto) {
+    public ResponseEntity<UserResponseDto> insert(@Valid @RequestBody UserCreateDto createDto) {
         User newUser = userService.save(UserMapper.toUser(createDto));
         return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toDto(newUser));
     }
