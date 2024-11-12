@@ -1,6 +1,7 @@
 package com.pbcompass.park_api.web.controller;
 
 import com.pbcompass.park_api.web.dto.UserCreateDto;
+import com.pbcompass.park_api.web.dto.UserPasswordDto;
 import com.pbcompass.park_api.web.dto.UserResponseDto;
 import com.pbcompass.park_api.web.dto.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
@@ -42,8 +43,8 @@ public class UserController {
     }
 
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<User> updatePassword(@PathVariable Long id, @RequestBody User user) {
-        User currentUser = userService.updatePassword(id, user.getPassword());
-        return ResponseEntity.status(HttpStatus.OK).body(currentUser);
+    public ResponseEntity<Void> updatePassword(@PathVariable Long id, @RequestBody UserPasswordDto userDto) {
+        User currentUser = userService.updatePassword(id, userDto.getCurrentPassword(), userDto.getNewPassword(), userDto.getConfirmPassword());
+        return ResponseEntity.noContent().build();
     }
 }
