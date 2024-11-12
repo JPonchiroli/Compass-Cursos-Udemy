@@ -1,5 +1,8 @@
 package com.pbcompass.park_api.web.controller;
 
+import com.pbcompass.park_api.web.dto.UserCreateDto;
+import com.pbcompass.park_api.web.dto.UserResponseDto;
+import com.pbcompass.park_api.web.dto.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
@@ -20,9 +23,9 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> insert(@RequestBody User user) {
-        User newUser = userService.save(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
+    public ResponseEntity<UserResponseDto> insert(@RequestBody UserCreateDto createDto) {
+        User newUser = userService.save(UserMapper.toUser(createDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(UserMapper.toDto(newUser));
     }
 
     @GetMapping
@@ -33,9 +36,9 @@ public class UserController {
 
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
+    public ResponseEntity<UserResponseDto> findById(@PathVariable Long id) {
         User user = userService.findById(id);
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(UserMapper.toDto(user));
     }
 
     @PatchMapping(value = "/{id}")
