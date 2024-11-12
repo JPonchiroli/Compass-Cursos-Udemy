@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import com.pbcompass.park_api.entities.User;
 import com.pbcompass.park_api.services.UserService;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("api/v1/users")
@@ -22,10 +25,17 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
 
+    @GetMapping
+    public ResponseEntity<List<User>> findAll(){
+        List<User> users = userService.findAll();
+        return ResponseEntity.ok(users);
+    }
+
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User user = userService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(user);
+        return ResponseEntity.ok(user);
     }
 
     @PatchMapping(value = "/{id}")
@@ -33,5 +43,4 @@ public class UserController {
         User currentUser = userService.updatePassword(id, user.getPassword());
         return ResponseEntity.status(HttpStatus.OK).body(currentUser);
     }
-
 }

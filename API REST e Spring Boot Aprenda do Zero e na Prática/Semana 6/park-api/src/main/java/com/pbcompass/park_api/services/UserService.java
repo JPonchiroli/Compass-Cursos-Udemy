@@ -6,6 +6,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class UserService {
@@ -28,4 +30,10 @@ public class UserService {
         user.setPassword(password);
         return user;
     }
+
+    @Transactional
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
 }
