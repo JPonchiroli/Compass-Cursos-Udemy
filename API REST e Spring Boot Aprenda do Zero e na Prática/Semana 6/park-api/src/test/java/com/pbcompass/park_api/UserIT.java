@@ -15,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import java.util.List;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //'@Sql(scripts = "/users/users-insert.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 //@Sql(scripts = "/users/users-delete.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
@@ -267,4 +269,24 @@ public class UserIT {
 
 
     }
+
+    @Test
+    public void listUsers_WithoutParams_ReturnUserListWithStatus200(){
+        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+
+        userService.save(newUser);
+
+        List<UserResponseDto> responseBody = testClient
+                .get()
+                .uri("api/v1/users")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.size()).isEqualTo(1);
+    }
+
 }
