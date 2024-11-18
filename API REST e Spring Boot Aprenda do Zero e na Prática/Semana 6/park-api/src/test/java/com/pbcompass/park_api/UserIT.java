@@ -15,7 +15,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@Sql(scripts = "/users/users-insert.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+//'@Sql(scripts = "/users/users-insert.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 //@Sql(scripts = "/users/users-delete.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class UserIT {
 
@@ -29,7 +29,7 @@ public class UserIT {
     UserRepository userRepository;
 
     @Test
-    public void createUser_WithValidUsernameAndPassword_ReturnUserCreatedWith201Status(){
+    public void createUser_WithValidUsernameAndPassword_ReturnUserCreatedWithStatus201(){
         UserResponseDto responseBody = testClient
                 .post()
                 .uri("/api/v1/users")
@@ -149,5 +149,40 @@ public class UserIT {
 
         org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
         org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(409);
+    }
+
+    @Test
+    public void searchUser_WithExistentId_ReturnUserWithStatus200(){
+        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+
+        userService.save(newUser);
+
+        UserResponseDto responseBody = testClient
+                .get()
+                .uri("/api/v1/users/1")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getId()).isEqualTo(1);
+        org.assertj.core.api.Assertions.assertThat(responseBody.getUsername()).isEqualTo("ana@gmail.com");
+        org.assertj.core.api.Assertions.assertThat(responseBody.getRole()).isEqualTo("CLIENT");
+    }
+
+    @Test
+    public void searchUser_WithNonExistentId_ReturnErrorMessageWithStatus404(){
+        ErrorMessage responseBody = testClient
+                .get()
+                .uri("/api/v1/users/1")
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(404);
     }
 }
