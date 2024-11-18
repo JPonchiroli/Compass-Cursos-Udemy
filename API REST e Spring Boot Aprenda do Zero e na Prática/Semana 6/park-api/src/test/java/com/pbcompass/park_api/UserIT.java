@@ -1,7 +1,11 @@
 package com.pbcompass.park_api;
 
+import com.pbcompass.park_api.entities.User;
+import com.pbcompass.park_api.repositories.UserRepository;
+import com.pbcompass.park_api.services.UserService;
 import com.pbcompass.park_api.web.dto.UserCreateDto;
 import com.pbcompass.park_api.web.dto.UserResponseDto;
+import com.pbcompass.park_api.web.dto.mapper.UserMapper;
 import com.pbcompass.park_api.web.exception.ErrorMessage;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,12 @@ public class UserIT {
 
     @Autowired
     WebTestClient testClient;
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Test
     public void createUser_WithValidUsernameAndPassword_ReturnUserCreatedWith201Status(){
@@ -118,5 +128,26 @@ public class UserIT {
 
         org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
         org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
+    }
+
+    @Test
+    public void createUser_WithRepeatedUsername_ReturnErrorMessageStatus409(){
+        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+
+        userService.save(newUser);
+
+        ErrorMessage responseBody = testClient
+                .post()
+                .uri("/api/v1/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("ana@gmail.com", "123456"))
+                .exchange()
+                .expectStatus().isEqualTo(409)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(409);
     }
 }
