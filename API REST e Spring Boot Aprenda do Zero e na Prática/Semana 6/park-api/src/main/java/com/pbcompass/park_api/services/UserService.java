@@ -1,14 +1,12 @@
 package com.pbcompass.park_api.services;
 
-import com.pbcompass.park_api.exception.EntityNotFoundException;
-import com.pbcompass.park_api.exception.PasswordInvalidException;
+import com.pbcompass.park_api.exception.*;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.pbcompass.park_api.entities.User;
-import com.pbcompass.park_api.exception.UsernameUniqueViolationException;
 import com.pbcompass.park_api.repositories.UserRepository;
 
 import java.util.List;
@@ -36,14 +34,19 @@ public class UserService {
 
     @Transactional
     public User updatePassword(Long id, String currentPassword, String newPassword, String confirmPassword){
-        if (!newPassword.equals(confirmPassword)){
-            throw new PasswordInvalidException("The new password and confirmation field are not equals");
+        if (!newPassword.equals(confirmPassword)) {
+            throw new PasswordConfirmationMismatchException("The new password and confirmation field are not equals");
         }
 
         User user = findById(id);
-        if (!user.getPassword().equals(currentPassword)){
-            throw new PasswordInvalidException("Your password does not match");
+        if (!user.getPassword().equals(currentPassword)) {
+            throw new PasswordMismatchException("Your password does not match");
         }
+
+        if (newPassword.isEmpty() || confirmPassword.isEmpty()) {
+            throw new EmptyPasswordException("Your new password must be write");
+        }
+
         user.setPassword(newPassword);
         return user;
     }

@@ -4,6 +4,7 @@ import com.pbcompass.park_api.entities.User;
 import com.pbcompass.park_api.repositories.UserRepository;
 import com.pbcompass.park_api.services.UserService;
 import com.pbcompass.park_api.web.dto.UserCreateDto;
+import com.pbcompass.park_api.web.dto.UserPasswordDto;
 import com.pbcompass.park_api.web.dto.UserResponseDto;
 import com.pbcompass.park_api.web.dto.mapper.UserMapper;
 import com.pbcompass.park_api.web.exception.ErrorMessage;
@@ -184,5 +185,86 @@ public class UserIT {
 
         org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
         org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(404);
+    }
+
+    @Test
+    public void updatePassword_WithValidData_ReturnStatus204(){
+        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+
+        userService.save(newUser);
+
+        testClient
+                .patch()
+                .uri("/api/v1/users/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPasswordDto("123456","123455", "123455"))
+                .exchange()
+                .expectStatus().isNoContent();
+    }
+
+    @Test
+    public void updatePassword_WithNonExistentId_ReturnStatus404(){
+        ErrorMessage responseBody = testClient
+                .patch()
+                .uri("/api/v1/users/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPasswordDto("123456","123455", "123455"))
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(404);
+    }
+
+    @Test
+    public void updatePassword_WithInvalidFields_ReturnErrorMessage(){
+        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+
+        userService.save(newUser);
+
+        ErrorMessage responseBody = testClient
+                .patch()
+                .uri("/api/v1/users/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPasswordDto("","", ""))
+                .exchange()
+                .expectStatus().isEqualTo(401)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
+
+        responseBody = testClient
+                .patch()
+                .uri("/api/v1/users/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPasswordDto("12345","12345", "12345"))
+                .exchange()
+                .expectStatus().isEqualTo(401)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
+
+        responseBody = testClient
+                .patch()
+                .uri("/api/v1/users/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPasswordDto("1234567","1234567", "1234567"))
+                .exchange()
+                .expectStatus().isEqualTo(401)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
+
+
     }
 }
