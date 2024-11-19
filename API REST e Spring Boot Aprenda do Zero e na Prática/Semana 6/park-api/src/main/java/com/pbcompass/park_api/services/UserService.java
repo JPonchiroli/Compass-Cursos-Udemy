@@ -4,6 +4,7 @@ import com.pbcompass.park_api.exception.*;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pbcompass.park_api.entities.User;
@@ -16,10 +17,12 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public User save(User user) {
         try {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);
         } catch (DataIntegrityViolationException e ) {
             throw new UsernameUniqueViolationException(String.format("Username {%s} already registered", user.getUsername()));
@@ -39,7 +42,8 @@ public class UserService {
         }
 
         User user = findById(id);
-        if (!user.getPassword().equals(currentPassword)) {
+
+        if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
             throw new PasswordMismatchException("Your password does not match");
         }
 
@@ -47,7 +51,7 @@ public class UserService {
             throw new EmptyPasswordException("Your new password must be write");
         }
 
-        user.setPassword(newPassword);
+        user.setPassword(passwordEncoder.encode(newPassword));
         return user;
     }
 
