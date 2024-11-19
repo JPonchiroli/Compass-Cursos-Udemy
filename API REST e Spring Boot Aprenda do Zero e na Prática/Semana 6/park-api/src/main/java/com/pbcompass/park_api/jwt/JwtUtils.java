@@ -52,15 +52,14 @@ public class JwtUtils {
         return new JwtToken(token);
     }
 
-    private static Claims getClaimsFromToken(String token){
+    private static Claims getClaimsFromToken(String token) {
         try {
-            return Jwts.parser()
+            return Jwts.parserBuilder()
                     .setSigningKey(generateKey()).build()
                     .parseClaimsJws(refactorToken(token)).getBody();
-        } catch (JwtException e){
-            log.error(String.format("Invalid Token %s", e.getMessage()));
+        } catch (JwtException ex) {
+            log.error(String.format("Token invalido %s", ex.getMessage()));
         }
-
         return null;
     }
 
@@ -68,16 +67,15 @@ public class JwtUtils {
         return getClaimsFromToken(token).getSubject();
     }
 
-    public static boolean isTokenValid(String token){
+    public static boolean isTokenValid(String token) {
         try {
-             Jwts.parser()
-                     .setSigningKey(generateKey()).build()
-                    .parseClaimsJws(refactorToken(token)).getBody();
-             return true
-        } catch (JwtException e){
-            log.error(String.format("Invalid Token %s", e.getMessage()));
+            Jwts.parserBuilder()
+                    .setSigningKey(generateKey()).build()
+                    .parseClaimsJws(refactorToken(token));
+            return true;
+        } catch (JwtException ex) {
+            log.error(String.format("Token invalido %s", ex.getMessage()));
         }
-
         return false;
     }
 
