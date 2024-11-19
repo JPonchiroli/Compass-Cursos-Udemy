@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.pbcompass.park_api.entities.User;
@@ -67,6 +68,7 @@ public class UserController {
                 content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
     })
     @GetMapping(value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserResponseDto> findById(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(UserMapper.toDto(user));
