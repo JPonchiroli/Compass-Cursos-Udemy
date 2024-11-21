@@ -7,7 +7,10 @@ import com.pbcompass.park_api.repositories.ClientRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+
+import org.springframework.data.domain.Pageable;
 
 @RequiredArgsConstructor
 @Service
@@ -30,5 +33,10 @@ public class ClientService {
         return clientRepository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Client id={} not found in the system", id))
         );
+    }
+
+    @Transactional
+    public Page<Client> findAll(Pageable pageble) {
+        return clientRepository.findAll(pageble);
     }
 }
