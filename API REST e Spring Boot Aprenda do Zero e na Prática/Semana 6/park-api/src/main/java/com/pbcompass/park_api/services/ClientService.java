@@ -4,6 +4,7 @@ import com.pbcompass.park_api.entities.Client;
 import com.pbcompass.park_api.exception.CpfUniqueViolationException;
 import com.pbcompass.park_api.exception.EntityNotFoundException;
 import com.pbcompass.park_api.repositories.ClientRepository;
+import com.pbcompass.park_api.repositories.projection.ClientProjection;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -36,7 +37,7 @@ public class ClientService {
     }
 
     @Transactional
-    public Page<Client> findAll(Pageable pageble) {
-        return clientRepository.findAll(pageble);
+    public Page<ClientProjection> findAll(Pageable pageble) {
+        return clientRepository.findAllPageable(pageble);
     }
 }
