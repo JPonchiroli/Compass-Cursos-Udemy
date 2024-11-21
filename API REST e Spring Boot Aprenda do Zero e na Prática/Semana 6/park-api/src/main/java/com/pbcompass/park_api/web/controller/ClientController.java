@@ -50,8 +50,18 @@ public class ClientController {
         return ResponseEntity.status(201).body(ClientMapper.toDto(client));
     }
 
-
+    @Operation(summary = "Locale a Client", description = "Resource to locale a client by id. " +
+            "The request requires a Bearer Token. Access restricted to ADMIN",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Resource found successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
+                    @ApiResponse(responseCode = "404", description = "Client not found",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "403", description = "Resource not allowed to CLIENT profile",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
+            })
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ClientResponseDto> findById(@PathVariable Long id){
         Client client = clientService.findById(id);
         return ResponseEntity.ok(ClientMapper.toDto(client));

@@ -159,6 +159,28 @@ public class ClientIT {
 
         org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
         org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
+    }
+
+    @Test
+    public void findCliente_WithExistentIdByAdmin_ReturnStatus200(){
+        UserCreateDto user = new UserCreateDto("admin@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+        newUser.setRole(User.Role.ROLE_ADMIN);
+        userService.save(newUser);
+
+        ClientResponseDto responseBody = testClient
+                .post()
+                .uri("/api/v1/clients/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .headers(JwtAuthentication.getHeaderAuthentication(testClient, newUser.getUsername(), "123456"))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(ClientResponseDto.class)
+                .returnResult().getResponseBody();
+
+        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(responseBody.getId()).isEqualTo(1);
+
 
     }
 }
