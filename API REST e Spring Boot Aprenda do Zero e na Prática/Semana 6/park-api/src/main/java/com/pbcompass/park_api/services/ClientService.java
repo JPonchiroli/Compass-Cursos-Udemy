@@ -2,6 +2,7 @@ package com.pbcompass.park_api.services;
 
 import com.pbcompass.park_api.entities.Client;
 import com.pbcompass.park_api.exception.CpfUniqueViolationException;
+import com.pbcompass.park_api.exception.EntityNotFoundException;
 import com.pbcompass.park_api.repositories.ClientRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,12 @@ public class ClientService {
             throw new CpfUniqueViolationException(
                     String.format("CPF '%s' already registered.", client.getCpf()));
         }
+    }
+
+    @Transactional
+    public Client findById(Long id) {
+        return clientRepository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException(String.format("Client id={} not found in the system", id))
+        );
     }
 }
