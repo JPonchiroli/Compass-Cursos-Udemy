@@ -6,7 +6,13 @@ import com.pbcompass.park_api.services.ClientService;
 import com.pbcompass.park_api.services.UserService;
 import com.pbcompass.park_api.web.dto.ClientCreateDto;
 import com.pbcompass.park_api.web.dto.ClientResponseDto;
+import com.pbcompass.park_api.web.dto.UserResponseDto;
 import com.pbcompass.park_api.web.dto.mapper.ClientMapper;
+import com.pbcompass.park_api.web.exception.ErrorMessage;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +31,18 @@ public class ClientController {
     private final ClientService clientService;
     private final UserService userService;
 
-
+    @Operation(summary = "Insert a new Client", description = "Resource to create a new client liked with a user. " +
+            "The request requires a Bearer Token. Access restricted to CLIENT",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Resource created successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
+                    @ApiResponse(responseCode = "403", description = "Resource not authorized to ADMIN profile",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "409", description = "Client CPF already registered in the system",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "422", description = "Resource not processed buy wrong data entry",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
+            })
     @PostMapping
     @PreAuthorize("hasRole('CLIENT')")
     public ResponseEntity<ClientResponseDto> insert(@RequestBody @Valid ClientCreateDto dto,
