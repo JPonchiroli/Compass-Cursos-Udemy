@@ -25,7 +25,7 @@ import com.pbcompass.park_api.services.UserService;
 
 import java.util.List;
 
-    @Tag(name = "Users", description = "It has all the operations related to the insertion, editing and display resources of a user")
+@Tag(name = "Users", description = "It has all the operations related to the insertion, editing and display resources of a user")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("api/v1/users")
@@ -34,14 +34,14 @@ public class UserController {
     private final UserService userService;
 
     @Operation(summary = "Insert a new User", description = "Resource to create a new user",
-        responses = {
-            @ApiResponse(responseCode = "201", description = "Resource created successfully",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
-            @ApiResponse(responseCode = "409", description = "User e-mail already registered in the system",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-            @ApiResponse(responseCode = "422", description = "Resource not processed buy wrong data entry",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
-    })
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Resource created successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
+                    @ApiResponse(responseCode = "409", description = "User e-mail already registered in the system",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "422", description = "Resource not processed buy wrong data entry",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
+            })
     @PostMapping
     public ResponseEntity<UserResponseDto> insert(@Valid @RequestBody UserCreateDto createDto) {
         User newUser = userService.save(UserMapper.toUser(createDto));
@@ -51,15 +51,15 @@ public class UserController {
     @Operation(summary = "Retrieve all registered users", description = "The request requires a Bearer Token. Access restricted to ADMIN",
             security = @SecurityRequirement(name = "security"),
             responses = {
-            @ApiResponse(responseCode = "200", description = "Resource retrieved successfully",
-                content = @Content(mediaType = "application/json",
-                array = @ArraySchema(schema = @Schema(implementation = UserResponseDto.class)))),
-            @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-    })
+                    @ApiResponse(responseCode = "200", description = "Resource retrieved successfully",
+                            content = @Content(mediaType = "application/json",
+                                    array = @ArraySchema(schema = @Schema(implementation = UserResponseDto.class)))),
+                    @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+            })
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<UserResponseDto>> findAll(){
+    public ResponseEntity<List<UserResponseDto>> findAll() {
         List<User> users = userService.findAll();
         return ResponseEntity.ok(UserMapper.toListDto(users));
     }
@@ -68,13 +68,13 @@ public class UserController {
     @Operation(summary = "Retrieve a user by id", description = "The request requires a Bearer Token. Access restricted to ADMIN|CLIENT",
             security = @SecurityRequirement(name = "security"),
             responses = {
-            @ApiResponse(responseCode = "200", description = "Resource retrieved successfully",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
-            @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-            @ApiResponse(responseCode = "404", description = "Resource not found",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-    })
+                    @ApiResponse(responseCode = "200", description = "Resource retrieved successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
+                    @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "404", description = "Resource not found",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+            })
     @GetMapping(value = "/{id}")
     @PreAuthorize("hasRole('ADMIN') OR (hasRole('CLIENT') AND #id == authentication.principal.id)")
     public ResponseEntity<UserResponseDto> findById(@PathVariable Long id) {
@@ -85,17 +85,17 @@ public class UserController {
     @Operation(summary = "Update password", description = "The request requires a Bearer Token. Access restricted to ADMIN|CLIENT",
             security = @SecurityRequirement(name = "security"),
             responses = {
-            @ApiResponse(responseCode = "204", description = "Password updated successfully",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = Void.class))),
-            @ApiResponse(responseCode = "400", description = "The password are not the same",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-             @ApiResponse(responseCode = "404", description = "Resource not found",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-            @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-            @ApiResponse(responseCode = "422", description = "Invalid fields or formated badly",
-                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-    })
+                    @ApiResponse(responseCode = "204", description = "Password updated successfully",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Void.class))),
+                    @ApiResponse(responseCode = "400", description = "The password are not the same",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "404", description = "Resource not found",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "403", description = "User without permission to access this resource",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "422", description = "Invalid fields or formated badly",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+            })
     @PatchMapping(value = "/{id}")
     @PreAuthorize("hasAnyRole('ADMIN', 'CLIENT') AND (#id == authentication.principal.id)")
     public ResponseEntity<Void> updatePassword(@Valid @PathVariable Long id, @RequestBody UserPasswordDto userDto) {
