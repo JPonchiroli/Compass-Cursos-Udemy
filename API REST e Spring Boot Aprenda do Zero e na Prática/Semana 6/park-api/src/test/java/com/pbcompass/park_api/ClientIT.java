@@ -13,6 +13,7 @@ import com.pbcompass.park_api.web.dto.UserResponseDto;
 import com.pbcompass.park_api.web.dto.mapper.ClientMapper;
 import com.pbcompass.park_api.web.dto.mapper.UserMapper;
 import com.pbcompass.park_api.web.exception.ErrorMessage;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -55,10 +56,10 @@ public class ClientIT {
                 .expectBody(ClientResponseDto.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getId()).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getName()).isEqualTo("joaop");
-        org.assertj.core.api.Assertions.assertThat(responseBody.getCpf()).isEqualTo("10909208905");
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getId()).isNotNull();
+        Assertions.assertThat(responseBody.getName()).isEqualTo("joaop");
+        Assertions.assertThat(responseBody.getCpf()).isEqualTo("10909208905");
     }
 
     @Test
@@ -84,8 +85,8 @@ public class ClientIT {
                 .expectBody(ErrorMessage.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(409);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(409);
     }
 
     @Test
@@ -106,8 +107,8 @@ public class ClientIT {
                 .expectBody(ErrorMessage.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
 
         testClient
                 .post()
@@ -120,8 +121,8 @@ public class ClientIT {
                 .expectBody(ErrorMessage.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
 
         testClient
                 .post()
@@ -134,8 +135,8 @@ public class ClientIT {
                 .expectBody(ErrorMessage.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(422);
 
     }
 
@@ -157,8 +158,8 @@ public class ClientIT {
                 .expectBody(ErrorMessage.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(401);
     }
 
     @Test
@@ -178,10 +179,57 @@ public class ClientIT {
                 .expectBody(ClientResponseDto.class)
                 .returnResult().getResponseBody();
 
-        org.assertj.core.api.Assertions.assertThat(responseBody).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(responseBody.getId()).isEqualTo(1);
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getId()).isEqualTo(1);
 
 
+    }
+
+    @Test
+    public void findCliente_WithNonExistentIdByAdmin_ReturnErrorMessageStatus404(){
+        UserCreateDto user = new UserCreateDto("admin@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+        newUser.setRole(User.Role.ROLE_ADMIN);
+        userService.save(newUser);
+
+        ErrorMessage responseBody = testClient
+                .post()
+                .uri("/api/v1/clients/0")
+                .contentType(MediaType.APPLICATION_JSON)
+                .headers(JwtAuthentication.getHeaderAuthentication(testClient, newUser.getUsername(), "123456"))
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(404);
+    }
+
+    @Test
+    public void findCliente_WithExistentIdByClient_ReturnErrorMessageStatus403(){
+        UserCreateDto user = new UserCreateDto("client@gmail.com", "123456");
+        User newUser = userRepository.save(UserMapper.toUser(user));
+        userService.save(newUser);
+
+        ClientCreateDto client = new ClientCreateDto("joaop", "10909208905");
+        Client newClient = new Client();
+        newClient.setUser(userService.findById(newUser.getId()));
+        newClient = clientRepository.save(ClientMapper.toClient(client));
+        clientService.insert(newClient);
+
+        ErrorMessage responseBody = testClient
+                .post()
+                .uri("/api/v1/clients/0")
+                .contentType(MediaType.APPLICATION_JSON)
+                .headers(JwtAuthentication.getHeaderAuthentication(testClient, newClient.getName(), "123456"))
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        Assertions.assertThat(responseBody).isNotNull();
+        Assertions.assertThat(responseBody.getStatus()).isEqualTo(404);
     }
 }
 
