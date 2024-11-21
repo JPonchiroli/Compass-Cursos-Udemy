@@ -29,7 +29,7 @@ public class ApiExceptionHandler {
                 .body(new ErrorMessage(request, HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Fields", result));
     }
 
-    @ExceptionHandler(UsernameUniqueViolationException.class)
+    @ExceptionHandler({UsernameUniqueViolationException.class, CpfUniqueViolationException.class})
     public ResponseEntity<ErrorMessage> dataIntegrityViolationException(UsernameUniqueViolationException ex, HttpServletRequest request){
         log.error("Api Error - ", ex);
         return ResponseEntity
