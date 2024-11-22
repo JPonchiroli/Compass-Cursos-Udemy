@@ -316,7 +316,7 @@ public class ClientIT {
 
     @Test
     public void findClient_WithDataOfClientToken_ReturnClientsWithStatus403(){
-        UserCreateDto user = new UserCreateDto("admin@gmail.com", "123456");
+        UserCreateDto user = new UserCreateDto("admin@gmail.com", "123456", User.Role.ROLE_ADMIN);
         User newUser = userRepository.save(UserMapper.toUser(user));
         newUser.setRole(User.Role.ROLE_ADMIN);
         userService.save(newUser);
