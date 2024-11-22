@@ -24,7 +24,7 @@ import java.net.URI;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("api/v1/parkingSpot")
+@RequestMapping("api/v1/parkingSpots")
 public class ParkingSpotController {
 
     private final ParkingSpotService parkingSpotService;
