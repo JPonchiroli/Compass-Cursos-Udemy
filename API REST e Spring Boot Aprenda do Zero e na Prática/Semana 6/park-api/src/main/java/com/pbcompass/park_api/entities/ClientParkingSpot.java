@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "client_have_parking_spot")
+@Table(name = "tb_client_have_parking_spot")
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class ClientParkingSpot {
