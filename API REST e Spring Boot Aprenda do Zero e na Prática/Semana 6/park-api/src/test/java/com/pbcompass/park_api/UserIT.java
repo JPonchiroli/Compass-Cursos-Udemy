@@ -12,11 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@Sql(scripts = )
 public class UserIT {
 
     @Autowired
@@ -270,10 +272,6 @@ public class UserIT {
 
     @Test
     public void listUsers_WithoutParams_ReturnUserListWithStatus200(){
-        UserCreateDto user = new UserCreateDto("ana@gmail.com", "123456");
-        User newUser = userRepository.save(UserMapper.toUser(user));
-
-        userService.save(newUser);
 
         List<UserResponseDto> responseBody = testClient
                 .get()
