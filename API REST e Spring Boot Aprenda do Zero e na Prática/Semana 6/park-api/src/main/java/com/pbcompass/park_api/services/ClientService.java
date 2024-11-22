@@ -40,4 +40,9 @@ public class ClientService {
     public Page<ClientProjection> findAll(Pageable pageble) {
         return clientRepository.findAllPageable(pageble);
     }
+
+    @Transactional
+    public Client findByUserId(Long id) {
+        return clientRepository.findByUserId(id);
+    }
 }
