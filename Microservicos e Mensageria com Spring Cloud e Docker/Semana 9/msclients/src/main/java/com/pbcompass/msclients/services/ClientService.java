@@ -1,13 +1,12 @@
 package com.pbcompass.msclients.services;
 
-import com.pbcompass.msclients.domain.Client;
+import com.pbcompass.msclients.entities.Client;
 import com.pbcompass.msclients.repositories.ClientRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Service

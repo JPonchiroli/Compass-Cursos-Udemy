@@ -1,4 +1,4 @@
-package com.pbcompass.msclients.domain;
+package com.pbcompass.msclients.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
