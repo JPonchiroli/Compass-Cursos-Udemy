@@ -1,6 +1,6 @@
-package com.pbcompass.msclients.repositories;
+package com.pbcompass.msclients.infra.repository;
 
-import com.pbcompass.msclients.entities.Client;
+import com.pbcompass.msclients.domain.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

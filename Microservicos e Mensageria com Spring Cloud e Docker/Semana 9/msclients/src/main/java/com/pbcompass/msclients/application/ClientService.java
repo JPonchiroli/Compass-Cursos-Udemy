@@ -1,20 +1,20 @@
-package com.pbcompass.msclients.services;
+package com.pbcompass.msclients.application;
 
-import com.pbcompass.msclients.entities.Client;
-import com.pbcompass.msclients.repositories.ClientRepository;
+import com.pbcompass.msclients.domain.Client;
+import com.pbcompass.msclients.infra.repository.ClientRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class ClientService {
 
-    @Autowired
     private final ClientRepository repository;
+
+    public ClientService(ClientRepository repository) {
+        this.repository = repository;
+    }
 
     @Transactional
     public Client save(Client client){
