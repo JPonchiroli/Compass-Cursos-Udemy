@@ -1,7 +1,7 @@
 package com.pbcompass.mscards.application.representation;
 
 import com.pbcompass.mscards.domain.CardFlag;
-import com.pbcompass.mscards.domain.Cards;
+import com.pbcompass.mscards.domain.Card;
 
 import java.math.BigDecimal;
 
@@ -11,8 +11,8 @@ public class CardSaveRequest {
     private BigDecimal income;
     private BigDecimal basicLimit;
 
-    public Cards toModel(){
-        return new Cards(name, flag, income, basicLimit);
+    public Card toModel(){
+        return new Card(name, flag, income, basicLimit);
     }
 
     public String getName() {

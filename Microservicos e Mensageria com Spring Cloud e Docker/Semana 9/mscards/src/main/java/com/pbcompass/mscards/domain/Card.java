@@ -1,12 +1,11 @@
 package com.pbcompass.mscards.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Entity
-@AllArgsConstructor
-public class Cards {
+public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,9 +19,17 @@ public class Cards {
     @Column
     private BigDecimal basicLimit;
 
-    public Cards(){};
+    public Card(){};
 
-    public Cards(String name, CardFlag flag, BigDecimal income, BigDecimal basicLimit) {
+    public Card(String name, CardFlag flag, BigDecimal income, BigDecimal basicLimit) {
+        this.name = name;
+        this.flag = flag;
+        this.income = income;
+        this.basicLimit = basicLimit;
+    }
+
+    public Card(Long id, String name, CardFlag flag, BigDecimal income, BigDecimal basicLimit) {
+        this.id = id;
         this.name = name;
         this.flag = flag;
         this.income = income;

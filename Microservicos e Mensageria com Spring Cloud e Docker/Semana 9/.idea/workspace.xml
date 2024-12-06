@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3dd9776-5c6e-4968-af57-4d2a86fe834c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/material-teorico/demanda-v1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/ParkApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/config/SpringDocOpenApiConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/config/SpringJpaAuditingConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/config/SpringSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/config/StringTimeZoneConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/entities/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/entities/ClientParkingSpot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/entities/ParkingSpot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/CodeUniqueViolationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/CpfUniqueViolationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/EmptyPasswordException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/EntityNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/PasswordConfirmationMismatchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/PasswordInvalidException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/PasswordMismatchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/exception/UsernameUniqueViolationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtAuthenticationEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtAuthorizationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/jwt/JwtUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/ClientParkingSpotRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/ClientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/ParkingSpotRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/projection/ClientParkingSpotProjection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/repositories/projection/ClientProjection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/ClientParkingSpotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/JasperService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/ParkingLotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/ParkingSpotService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/utils/ParkingLotUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/controller/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/controller/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/controller/ParkingLotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/controller/ParkingSpotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ClientCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ClientResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/PageableDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ParkingLotCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ParkingLotResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ParkingSpotCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/ParkingSpotResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/UserCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/UserLoginDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/UserPasswordDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/UserResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/mapper/ClientMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/mapper/ClientParkingSpotMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/mapper/PageableMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/mapper/ParkingSpotMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/dto/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/exception/ApiExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/java/com/pbcompass/park_api/web/exception/ErrorMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/resources/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/resources/messages_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/resources/reports/images/parking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/main/resources/reports/parkingLot.jasper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/AuthenticationIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/ClientIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/JwtAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/ParkingLotIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/ParkingSpotIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/java/com/pbcompass/park_api/UserIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/resources/sql/deleteScript.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/resources/sql/insertScript.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/resources/sql/parkingLot/parkingLot-delete.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../API REST e Spring Boot Aprenda do Zero e na Prática/Semana 6/park-api/src/test/resources/sql/parkingLot/parkingLot-insert.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2plCaQFZOon0jJ7iaJ4rC77DDRw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/joaop/OneDrive/Área de Trabalho/Compass-Cursos-Udemy/Microservicos e Mensageria com Spring Cloud e Docker/Semana 9"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3dd9776-5c6e-4968-af57-4d2a86fe834c" name="Changes" comment="" />
+      <created>1733331337495</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733331337495</updated>
+    </task>
+    <servers />
+  </component>
+</project>

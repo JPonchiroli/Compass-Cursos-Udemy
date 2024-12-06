@@ -1,9 +1,8 @@
 package com.pbcompass.mscards.application;
 
-import com.pbcompass.mscards.domain.Cards;
+import com.pbcompass.mscards.domain.Card;
 import com.pbcompass.mscards.infra.repository.CardsRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -19,11 +18,11 @@ public class CardsService {
     }
 
     @Transactional
-    public Cards save(Cards card){
+    public Card save(Card card){
         return repository.save(card);
     }
 
-    public List<Cards> getCardsIncomeLessEqual(Long income){
+    public List<Card> getCardsIncomeLessEqual(Long income){
         BigDecimal incomeBigDecimal = BigDecimal.valueOf(income);
         return repository.findByIncomeLessThanEqual(incomeBigDecimal);
     }
