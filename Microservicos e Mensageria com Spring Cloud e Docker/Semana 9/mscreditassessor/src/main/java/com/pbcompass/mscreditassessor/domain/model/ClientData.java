@@ -1,22 +1,22 @@
 package com.pbcompass.mscreditassessor.domain.model;
 
 public class ClientData {
-    private Long id;
+    private String cpf;
     private String name;
 
     public ClientData(){}
 
-    public ClientData(Long id, String name) {
-        this.id = id;
+    public ClientData(String cpf, String name) {
+        this.cpf = cpf;
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getName() {

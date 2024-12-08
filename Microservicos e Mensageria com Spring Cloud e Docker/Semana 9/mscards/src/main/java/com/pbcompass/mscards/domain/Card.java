@@ -16,7 +16,7 @@ public class Card {
     private CardFlag flag;
     @Column
     private BigDecimal income;
-    @Column
+    @Column(name = "card_limit")
     private BigDecimal basicLimit;
 
     public Card(){};
