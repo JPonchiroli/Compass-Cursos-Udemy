@@ -6,14 +6,14 @@ public class ClientCard {
 
     private String name;
     private String flag;
-    private BigDecimal releasedLimit;
+    private BigDecimal limitReleased;
 
     public ClientCard(){}
 
-    public ClientCard(String name, String flag, BigDecimal releasedLimit) {
+    public ClientCard(String name, String flag, BigDecimal limitReleased) {
         this.name = name;
         this.flag = flag;
-        this.releasedLimit = releasedLimit;
+        this.limitReleased = limitReleased;
     }
 
     public String getName() {
@@ -32,11 +32,11 @@ public class ClientCard {
         this.flag = flag;
     }
 
-    public BigDecimal getReleasedLimit() {
-        return releasedLimit;
+    public BigDecimal getLimitReleased() {
+        return limitReleased;
     }
 
-    public void setReleasedLimit(BigDecimal releasedLimit) {
-        this.releasedLimit = releasedLimit;
+    public void setLimitReleased(BigDecimal limitReleased) {
+        this.limitReleased = limitReleased;
     }
 }

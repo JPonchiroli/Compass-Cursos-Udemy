@@ -1,5 +1,6 @@
 package com.pbcompass.mscreditassessor.infra.clients;
 
+import com.pbcompass.mscreditassessor.domain.model.Card;
 import com.pbcompass.mscreditassessor.domain.model.ClientCard;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -13,4 +14,7 @@ public interface CardsResourceClient {
 
     @GetMapping(params = "cpf")
     ResponseEntity<List<ClientCard>> getCardsByClient(@RequestParam("cpf") String cpf);
+
+    @GetMapping(params = "income")
+    ResponseEntity<List<Card>> getCardsWithIncomeUntil(@RequestParam("income") Long income);
 }
