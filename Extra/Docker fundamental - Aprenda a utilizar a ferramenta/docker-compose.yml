@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  app:
+    build: 
+      context: ./ms-1
+      dockerfile: Dockerfile
+    image: node-docker-image
+    container_name: node-docker
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ms-1:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
